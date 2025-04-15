@@ -16,20 +16,20 @@ function Surah() {
 
 
   return (
-    <div>
-      <div className="posts-container">
-        {surahs?.map((sura) => {
-          return (
-            <SurahCard
-              number={surahs.number}
-              title={surahs.englishName}
-              arabic={surahs.name}
-              subtitle={surahs.englishNameTranslation}
-              ayat={surahs.numberOfAyahs}            />
-          );
-        })}
-      </div>
+
+    <div className='main-surah-container'>
+      {surahs?.map((surah) => {
+        return (
+          <SurahCard
+            number={surah.number}
+            title={surah.englishName}
+            arabic={surah.name}
+            subtitle={surah.englishNameTranslation}
+            ayat={surah.numberOfAyahs} />
+        );
+      })}
     </div>
+
   )
 }
 

@@ -4,19 +4,18 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
 function Ayat() {
-  const { surahId } = useParams();
-  console.log(surahId);
+  const { number } = useParams();
+  console.log(number);
 
   const [ayats, setAyats] = useState(null);
   useEffect(() => {
     try {
       const info = async () => {
         const res = await axios.get(
-          `https://api.alquran.cloud/v1/surah//editions/quran-uthmani`
+          `https://api.alquran.cloud/v1/surah/${number}/editions/quran-uthmani`
         );
-        console.log(res.data);
-        setAyats(res.data);
-        
+        console.log(res.data.data);
+        setAyats(res.data.data);
       };
       info();
     } catch (error) {
@@ -24,8 +23,13 @@ function Ayat() {
     }
   }, []);
   return (
-    <div>
-       
+    <div className='container-ayat-main'> 
+    {ayats?.map((ayat)=>{
+      return (
+        <AyatCard number={ayat.number} text={ayat.text} />
+
+      );
+    })}
     </div>
   )
 }
