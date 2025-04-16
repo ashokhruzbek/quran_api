@@ -72,7 +72,7 @@
 /* Arabic title */
 .arabic-title {
   font-size: 14px;
-  color: black;
+  color: rgba(238, 238, 11, 0.767);
   text-align: right;
   margin-left: auto;
   font-weight: 500;
@@ -94,47 +94,49 @@
   margin-top: 5px;
 }
 
-
 .main-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #f8f9fa;
 }
 
 .verse-container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
-  position: relative;
+  background-color: #ffffff;
+  border-left: 5px solid #28a745;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.verse-container:hover {
+  transform: scale(1.01);
 }
 
 .verse-header {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: flex-end;
+  margin-bottom: 0.8rem;
 }
 
 .verse-number {
-  font-size: 18px;
-  color: #9e9e9e;
-  font-weight: 500;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
 }
 
 .arabic-text {
-  font-family: "Traditional Arabic", "Scheherazade New", serif;
-  font-size: 28px;
-  line-height: 1.6;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   text-align: right;
   direction: rtl;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-
-.translation {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #e0e0e0;
-  margin-bottom: 20px;
+  font-family: "Amiri", serif; /* Beautiful Arabic font */
+  color: #333;
 }

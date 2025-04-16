@@ -5,31 +5,27 @@ import axios from 'axios'
 
 function Ayat() {
   const { number } = useParams();
-  console.log(number);
 
-  const [ayats, setAyats] = useState(null);
+  const [ayats, setAyats] = useState([]);
   useEffect(() => {
+    const info = async () => {
     try {
-      const info = async () => {
         const res = await axios.get(
           `https://api.alquran.cloud/v1/surah/${number}/editions/quran-uthmani`
         );
-        console.log(res.data.data);
-        setAyats(res.data.data);
+        setAyats(res.data.data[0].ayahs);
+      } catch (error) {
+        console.log(error);
       };
-      info();
-    } catch (error) {
-      console.log(error);
     }
-  }, []);
+    info();
+  }, [number]);
   return (
     <div className='container-ayat-main'> 
-    {ayats?.map((ayat)=>{
-      return (
-        <AyatCard number={ayat.number} text={ayat.text} />
+       <AyatCard ayats={ayats} />
 
-      );
-    })}
+        {console.log(ayats)
+        }
     </div>
   )
 }

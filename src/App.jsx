@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route>
-            <Route path='/surah' element={<Surah/>}></Route>
+            <Route path='/' element={<Surah/>}></Route>
             <Route path='/surah/:number/ayat' element={<Ayat/>}></Route>
           </Route>
         </Routes>
