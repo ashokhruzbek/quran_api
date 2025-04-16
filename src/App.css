@@ -2,9 +2,12 @@
   padding: 0;
   margin: 0;
 }
+body{
+  background-color:#1f2125;
+
+}
 
 .main-surah-container{
-  background-color:#1f2125;
   padding: 8px;
   display: flex;
   flex-direction: row;
@@ -64,7 +67,7 @@
 
 /* Card title (Surah name) */
 .card-title {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   color: #30b3b3;
 }
@@ -95,18 +98,19 @@
 }
 
 .main-content {
-  max-width: 800px;
+  max-width: 990px;
+  width: 990px;
   margin: 0 auto;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background-color: #f8f9fa;
+  background-color:#1f2125;
 }
 
 .verse-container {
-  background-color: #ffffff;
-  border-left: 5px solid #28a745;
+  background-color:#1f2125;
+  border: 1px solid #464b50;;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   padding: 1.2rem 1.5rem;
@@ -114,6 +118,8 @@
 }
 
 .verse-container:hover {
+  border: 1px solid  #22a0a8;
+   transition: 0.2s;
   transform: scale(1.01);
 }
 
@@ -133,10 +139,18 @@
 }
 
 .arabic-text {
+  background-color:#1f2125;
   font-size: 1.6rem;
   line-height: 2.4rem;
   text-align: right;
   direction: rtl;
   font-family: "Amiri", serif; /* Beautiful Arabic font */
-  color: #333;
+  color: rgba(238, 238, 11, 0.767);
+}
+.loading{
+  display: flex;
+  justify-content: center;
+  margin: 270px auto;
+  color:rgba(238, 238, 11, 0.767); 
+  font-size: xx-large;
 }

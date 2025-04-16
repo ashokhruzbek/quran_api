@@ -2,7 +2,7 @@ import React from 'react'
 
 function AyatCard({ ayats }) {
     if (!ayats || ayats.length === 0) {
-      return <p>Loading ayats...</p>;
+      return <p className='loading'>Loading ayats...</p>;
     }
   
     return (
